@@ -34,10 +34,17 @@ class UserAdmin(admin.ModelAdmin):
     )
 
 
+class ProductSubCategoriesAdmin(admin.ModelAdmin):
+    list_display = (
+        "name",
+        "product_categories",
+    )
+
+
 admin.site.register(User, UserAdmin)
 admin.site.register(Country, CountryAdmin)
 admin.site.register(State, StateAdmin)
 admin.site.register(Order, OrderAdmin)
 admin.site.register(Product)
 admin.site.register(ProductCategories)
-admin.site.register(ProductSubCategories)
+admin.site.register(ProductSubCategories, ProductSubCategoriesAdmin)

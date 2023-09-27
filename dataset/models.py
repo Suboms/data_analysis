@@ -81,6 +81,9 @@ class User(AbstractUser):
     def __str__(self):
         return self.username
 
+    class Meta:
+        verbose_name_plural = "User"
+
 
 class ProductCategories(models.Model):
     name = models.CharField(max_length=1000, default="", unique=True)
@@ -88,6 +91,9 @@ class ProductCategories(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "Product Category"
 
 
 class ProductSubCategories(models.Model):
@@ -99,6 +105,9 @@ class ProductSubCategories(models.Model):
 
     def __str__(self):
         return self.name
+
+    class Meta:
+        verbose_name_plural = "Product Sub-Category"
 
 
 class Product(models.Model):
@@ -117,10 +126,12 @@ class Product(models.Model):
     def __str__(self):
         return self.name
 
+    class Meta:
+        verbose_name_plural = "Product"
+
 
 class Order(models.Model):
     user = models.ForeignKey(settings.AUTH_USER_MODEL, models.CASCADE, null=True)
-    date = models.DateField(default=timezone.now, null=True)
     product_categories = models.ForeignKey(
         ProductCategories, on_delete=models.PROTECT, default=None, null=True
     )
@@ -137,7 +148,11 @@ class Order(models.Model):
     total_price = models.DecimalField(
         max_digits=14, default=None, decimal_places=3, null=True
     )
+    date = models.DateTimeField(default=timezone.localtime, null=True)
     slug = models.SlugField(max_length=255, default=None, unique=True, null=True)
 
     def __str__(self):
         return f"{self.user} {self.product}"
+
+    class Meta:
+        verbose_name_plural = "Order"

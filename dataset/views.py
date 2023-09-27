@@ -4,6 +4,7 @@ from django.contrib.auth import get_user_model
 import string
 import random
 from django.utils.text import slugify
+from django.utils import timezone
 
 User = get_user_model()
 
@@ -101,7 +102,9 @@ def product_order(request):
         form = OrderForm(request.POST)
         if form.is_valid():
             order = form.save(commit=False)
-            order.user = request.user
+            order.user = User.objects.order_by("?").first()
+            # order.date = str(timezone.localtime)
+            # order.slug = slugify(f"{order}")
             order.save()
     else:
         form = OrderForm(initial={"quantity": None})

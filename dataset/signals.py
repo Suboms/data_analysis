@@ -15,4 +15,5 @@ def update_order(sender, instance, **kwargs):
         if not instance.slug:
             slug = slugify(f"order {instance.user.username} {formatted_order_count}")
             instance.slug = slug
+
         instance.save()
