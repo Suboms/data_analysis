@@ -55,15 +55,15 @@ elif action == str(6):
         for _ in range(num_users_to_create):
             user_data = generate_random_user_data()
             create_user(user_data)
-
+        for _ in range(num_users_to_create):
             category_data = random_category()
             create_categories(category_data)
-
+        for _ in range(num_users_to_create):
             sub_categorydata = sub_category_data()
             create_sub_categories(sub_categorydata)
-
+        for _ in range(num_users_to_create):
             product_data = products()
             create_product(product_data)
-
+        for _ in range(num_users_to_create):
             order_data = order()
             create_order(order_data)
