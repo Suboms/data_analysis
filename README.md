@@ -79,9 +79,7 @@ python3 -m tools
 ```
 
 ## Database
-Configure your PostgresSQL database by following the platform-specific instructions in the official [PostgresSQL documentation](https://www.postgresql.org/docs/).
-
-Update the DATABASES setting in settings.py to point to your PostgresSQL database:
+By default django provides a SQLite database which is what is being used for this project. If you however want to use PostgreSQL, you can configure your PostgreSQL database by following the platform-specific instructions in the official [PostgreSQL documentation](https://www.postgresql.org/docs/) and updating the DATABASES setting in the project settings.py to point to your PostgreSQL database by using the template below.
 
 ```
 DATABASES = {
