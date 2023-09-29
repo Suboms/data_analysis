@@ -53,7 +53,7 @@ This project simplifies data generation and export, making it a convenient tool 
 1. Create a virtual environment:
     ```shell
     python3 -m venv virtualenv
-    source env/bin/activate
+    source virtualenv/bin/activate
     ```
 
 2. Clone this repository:
