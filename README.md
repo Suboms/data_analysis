@@ -1,6 +1,6 @@
 <style>
 h1 {
-    font-size: 30px;
+    font-size: 70px;
 }
 </style>
 # Project Title: Data Generation and Export Tool
