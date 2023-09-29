@@ -1,6 +1,5 @@
 <h1 style="font-size: 50px;">Data Generation and Export Tool</h1>
 
-
 ## Project Description
 
 The "Data Generation and Export Tool" is a simple command-line application built using Django. Its primary purpose is to create a database model, populate the database with data in bulk, and then extract and save that data into CSV and Excel files for easy data analysis.
@@ -32,6 +31,7 @@ This project simplifies the process of generating and exporting data, making it 
 - **Time Efficiency:** Reduces the time and effort required to create and manage synthetic datasets.
 
 - **Data Security:** Provides data anonymization features to protect sensitive information.
+
 ### Target Audience
 
 - Data Analysts
@@ -42,5 +42,6 @@ This project simplifies the process of generating and exporting data, making it 
 - Django Developers
 - Anyone in need of generating and analyzing synthetic data efficiently.
 
-
-The _"Data Generation and Export Tool"_ project, built on the Django framework, offers a comprehensive solution for data professionals seeking to streamline the data generation process, store synthetic data, and effortlessly extract data for analysis. This Django-powered system bridges the gap between data generation and analysis, enhancing the efficiency and effectiveness of data-driven decision-making processes.
+<p style="font-size: 50px;">
+The <i>"Data Generation and Export Tool"</i> project, built on the Django framework, offers a comprehensive solution for data professionals seeking to streamline the data generation process, store synthetic data, and effortlessly extract data for analysis. This Django-powered system bridges the gap between data generation and analysis, enhancing the efficiency and effectiveness of data-driven decision-making processes.
+</p>
