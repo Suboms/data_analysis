@@ -17,6 +17,10 @@ class StateAdmin(admin.ModelAdmin):
 
 class OrderAdmin(admin.ModelAdmin):
     readonly_fields = ("date",)
+    list_display = (
+        "id",
+        "date",
+    )
 
 
 class UserAdmin(admin.ModelAdmin):

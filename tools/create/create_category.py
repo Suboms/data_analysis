@@ -1,11 +1,9 @@
 import requests
-from .project_path import *
-from .urls import *
-
+from tools.project_path import *
+from tools.urls import *
 
 
 CATEGORIES = ["ACESSORIES", "CLOTHES", "HOUSEHOLD ITEMS", "BOOKS", "TOOLS"]
-
 
 
 def random_category():

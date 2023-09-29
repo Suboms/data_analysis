@@ -1,14 +1,6 @@
 import requests
-from .project_path import *
-from .urls import *
-
-
-
-
-
-
-
-
+from tools.project_path import *
+from tools.urls import *
 
 
 def sub_category_data():

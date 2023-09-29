@@ -1,12 +1,9 @@
 import requests
 import string
 import random
-from .project_path import *
-from .urls import *
+from tools.project_path import *
+from tools.urls import *
 from django.utils.text import slugify
-
-
-
 
 
 # Define choices for gender based on your Django model choices
