@@ -1,9 +1,5 @@
-<style>
-h1 {
-    font-size: 70px;
-}
-</style>
-# Project Title: Data Generation and Export Tool
+<h1 style="font-size: 50px;">Data Generation and Export Tool</h1>
+
 
 ## Project Description
 
