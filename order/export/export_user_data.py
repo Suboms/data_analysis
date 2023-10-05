@@ -1,8 +1,10 @@
-from tools.project_path import *
+import os
+from datetime import datetime
+
 import pandas as pd
 import pytz
-from datetime import datetime
-import os
+
+from project_path import *
 
 users = User.objects.all().order_by("?")
 
@@ -45,7 +47,7 @@ def users_data(date):
 
 
 def export_user_data(data, excel_file_path, csv_file_path):
-    
+
     df = pd.DataFrame(data)
     df.to_excel(excel_file_path, index=False, sheet_name="User Table")
     df.to_csv(
@@ -53,5 +55,3 @@ def export_user_data(data, excel_file_path, csv_file_path):
         index=False,
     )
     print(f"Successfully Exported data to {excel_file_path} and {csv_file_path}")
-    
-    

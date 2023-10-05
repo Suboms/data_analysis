@@ -1,7 +1,9 @@
-from tools.project_path import *
+from datetime import datetime
+
 import pandas as pd
 import pytz
-from datetime import datetime
+
+from project_path import *
 
 product_category = ProductCategories.objects.all().order_by("?")
 

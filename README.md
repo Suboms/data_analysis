@@ -97,3 +97,5 @@ DATABASES = {
 
 
 The **_"Data Generation and Export Tool"_** project, built on the Django framework, offers a comprehensive solution for data professionals seeking to streamline the data generation process, store synthetic data, and effortlessly extract data for analysis. This Django-powered system bridges the gap between data generation and analysis, enhancing the efficiency and effectiveness of data-driven decision-making processes.
+
+> **N.B.:** For an individual to be able to customize the project to their own like, you must have a working knowledge and understanding of **Python** and **Django Framework**.

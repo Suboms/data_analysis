@@ -1,7 +1,9 @@
-from tools.project_path import *
+from datetime import datetime
+
 import pandas as pd
 import pytz
-from datetime import datetime
+
+from project_path import *
 
 # Query all the Order objects
 orders = Order.objects.all().order_by("?")
@@ -57,7 +59,9 @@ def order_data(date):
             for order in orders
         ],
         "Unit Price": [order.price if order.price else "" for order in orders],
-        "Order Quantity": [order.quantity if order.quantity else "" for order in orders],
+        "Order Quantity": [
+            order.quantity if order.quantity else "" for order in orders
+        ],
         "Total Price": [
             order.total_price if order.total_price else "" for order in orders
         ],

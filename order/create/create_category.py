@@ -1,7 +1,7 @@
 import requests
-from tools.project_path import *
-from tools.urls import *
 
+from project_path import *
+from urls import *
 
 CATEGORIES = ["ACESSORIES", "CLOTHES", "HOUSEHOLD ITEMS", "BOOKS", "TOOLS"]
 

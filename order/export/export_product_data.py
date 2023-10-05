@@ -1,7 +1,9 @@
-from tools.project_path import *
+from datetime import datetime
+
 import pandas as pd
 import pytz
-from datetime import datetime
+
+from project_path import *
 
 products = Product.objects.all().order_by("?")
 
@@ -19,7 +21,9 @@ def products_data():
             for product in products
         ],
         "Product Sub Category": [
-            product.product_sub_categories.name if product.product_sub_categories else ""
+            product.product_sub_categories.name
+            if product.product_sub_categories
+            else ""
             for product in products
         ],
         "Quantity": [

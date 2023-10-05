@@ -1,8 +1,8 @@
-from django.db import models
-from django.contrib.auth.models import AbstractUser
 from django.conf import settings
+from django.contrib.auth.models import AbstractUser
+from django.db import models
+from django.db.models import *
 from django.utils import timezone
-
 
 GENDER = (("MALE", "Male"), ("FEMALE", "Female"), ("OTHERS", "Others"))
 AGE_GROUP = (
@@ -156,3 +156,55 @@ class Order(models.Model):
 
     class Meta:
         verbose_name_plural = "Order"
+
+
+class Company(Model):
+    name = CharField(default=None, null=True, unique=True, max_length=1000)
+    slug = SlugField(max_length=255, default=None, unique=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Companies"
+
+    def __str__(self):
+        return self.name
+
+
+class Subsidiaries(Model):
+    company = ForeignKey(
+        Company, on_delete=PROTECT, default=None, null=True, to_field="name"
+    )
+    name = CharField(max_length=1000, default=None, null=True, unique=True)
+    slug = SlugField(max_length=255, default=None, unique=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Subsidiaries"
+
+    def __str__(self):
+        return self.name
+
+
+class StaffDetails(Model):
+    surname = CharField(max_length=1000, default=None, null=True)
+    first_name = CharField(max_length=1000, default=None, null=True)
+    other_names = CharField(max_length=1000, default=None, null=True, blank=True)
+    gender = models.CharField(max_length=255, choices=GENDER, default=None, null=True)
+    dob = DateField(default=None, null=True)
+    age = PositiveBigIntegerField(default=None, null=True)
+    company = ForeignKey(
+        Company, on_delete=PROTECT, default=None, null=True, to_field="name"
+    )
+    subsidiary = ForeignKey(
+        Subsidiaries, on_delete=PROTECT, default=None, null=True, to_field="name"
+    )
+    date_joined = DateField(default=None, null=True)
+    role = CharField(max_length=1000, default=None, null=True)
+    year_on_contract = PositiveIntegerField(default=None, null=True)
+    salary = PositiveBigIntegerField(default=None, null=True)
+    retirement_date = DateField(default=None, null=True)
+    slug = SlugField(max_length=255, default=None, unique=True, null=True)
+
+    class Meta:
+        verbose_name_plural = "Staff Details"
+
+    def __str__(self):
+        return f"{self.surname} {self.first_name} {self.other_names}"
